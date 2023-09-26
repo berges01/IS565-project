@@ -1,5 +1,5 @@
 import os
-import subprocess
+import subprocess 
 
 def chrome_data():
     #file path will need to be changed to detect username and better filepath
@@ -19,11 +19,19 @@ def chrome_data():
 def firewall_data():
     file = open(r"D:\results.txt", "w+")
     file.write("Here is the current status of your firewall profiles: \n")
-    domain_profile = subprocess.check_call('netsh advfirewall show domainprofile state')
-    file.write(str(domain_profile) + "\n")
-    private_profile = str(subprocess.check_call('netsh advfirewall show privateprofile state'))
+    domain_profile = str(subprocess.check_output('netsh advfirewall show domainprofile state'))
+    private_profile = str(subprocess.check_output('netsh advfirewall show privateprofile state'))
+    public_profile = str(subprocess.check_output('netsh advfirewall show publicprofile state'))
+    
+    # profiles = [domain_profile, private_profile, public_profile]
+
+    # for profile in profiles:
+    #     profile = profile.replace("b'\r\n", "")
+
+    domain_profile = domain_profile.replace("b'\r\n", "")
+
+    file.write(domain_profile + "\n")
     file.write(private_profile + "\n")
-    public_profile = str(subprocess.check_call('netsh advfirewall show publicprofile state'))
     file.write(public_profile + "\n")
     file.write("If any of these profiles are set to 'OFF' you may be vulnerable to an attack")
     file.write("To remidiate this __________________________________")
