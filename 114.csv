@@ -1,0 +1,6 @@
+CVE	Published	Last Update	Max CVSS Base Score	EPSS Score	CISA KEV Added	Public Exploit Exists	Summary
+CVE-2023-3422	2023-06-26	2023-07-04	8.8	0.05%			Use after free in Guest View in Google Chrome prior to 114.0.5735.198 allowed an attacker who convinced a user to install a malicious extension to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)
+CVE-2023-3421	2023-06-26	2023-09-25	8.8	0.23%			Use after free in Media in Google Chrome prior to 114.0.5735.198 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)
+CVE-2023-3217	2023-06-13	2023-07-17	8.8	0.19%			Use after free in WebXR in Google Chrome prior to 114.0.5735.133 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)
+CVE-2023-3215	2023-06-13	2023-06-27	8.8	0.11%			Use after free in WebRTC in Google Chrome prior to 114.0.5735.133 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)
+CVE-2023-3214	2023-06-13	2023-06-27	8.8	0.13%			Use after free in Autofill payments in Google Chrome prior to 114.0.5735.133 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: Critical)
