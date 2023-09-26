@@ -5,9 +5,14 @@ def is_chrome_installed():
     chrome_file_path = "C:\Program Files\Google\Chrome"
     
     if os.path.exists(chrome_file_path):
-        print("Google Chrome is installed on your system.")
+        return True
     else:
-        print("Google Chrome is not installed on your system.")
+        return False
+    
+if is_chrome_installed():
+    print("Chrome is installed on this system")
+else:
+    print("Chrome is not installed on this system")
 
 
 
