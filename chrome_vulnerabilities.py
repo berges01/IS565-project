@@ -1,7 +1,7 @@
 import os
 import subprocess 
 
-def chrome_data():
+def is_chrome_installed():
     chrome_file_path = "C:\Program Files\Google\Chrome"
     
     if os.path.exists(chrome_file_path):
@@ -11,3 +11,4 @@ def chrome_data():
         return True
     else:
         print("Goolge Chrome is not installed \n")
+
