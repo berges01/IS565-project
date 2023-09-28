@@ -3,7 +3,7 @@ import subprocess
 
 def is_chrome_installed():
     chrome_file_path = "C:\Program Files\Google\Chrome\Application"
-    
+    #Check if chrome is installed and grab version
     if os.path.exists(chrome_file_path):
         output = subprocess.check_output(r'wmic datafile where name="C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" get Version /value',shell=True)
         print("Google Chrome is running the following version:")
@@ -20,15 +20,16 @@ def is_chrome_installed():
         return False
 
 def possible_vulnerabilities():
+    #Check if chrome is installed and grab version
     output = subprocess.check_output(r'wmic datafile where name="C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" get Version /value',shell=True)
     version = output.decode('utf-8').strip()
     revised_version = version.replace("Version=", "")
     if(revised_version[:3] == '117' or revised_version[:3] == '118'):
         return True
     
+    #Classifications of versions and their vulnerabilities
     elif revised_version[:3] == '116' or revised_version[:3] == '115':
         print("Your version of Google Chrome is out of data and may contain vulnerabilites")
-
     elif revised_version[:3] == '114':
         print("Your version of Google Chrome is 4 months out of date and contains these vulnerabilities:")
         f = open('114.csv', 'r')
