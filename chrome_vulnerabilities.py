@@ -1,5 +1,5 @@
 import os
-import subprocess 
+import subprocess
 
 def is_chrome_installed():
     chrome_file_path = "C:\Program Files\Google\Chrome\Application"
@@ -46,17 +46,43 @@ def possible_vulnerabilities():
         print(f.read())
         f.close()
 
-def firewall_settings():
-    print("test")
-    
-menu_input = "str"
+def windows_defender_status():
+    # Define the PowerShell command you want to execute
+    powershell_command = "Get-MpComputerStatus"
 
-while not menu_input in ("chrome-vulnerabilities", "firewall-settings"):
-    menu_input = input("Input the function you would like to run from the list \nchrome-vulnerabilities \nfirewall-settings \n")
+    try:
+        # Run the PowerShell command
+        result = subprocess.run(["powershell", "-Command", powershell_command], capture_output=True, text=True, check=True)
+
+        # Check the output
+        if result.returncode == 0:
+            # The command was successful
+            print("PowerShell Command Output:")
+            print(result.stdout)
+        else:
+            # There was an error
+            print("Error executing PowerShell command:")
+            print(result.stderr)
+
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e}")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+
+# main menu and functions
+menu_input = "str"
+while not menu_input in ("chrome-vulnerabilities", "windows-defender", "help"):
+    menu_input = input("Input the function you would like to run from the list \nchrome-vulnerabilities \nwindows-defender \nhelp \n")
     if menu_input == "chrome-vulnerabilities":
         is_chrome_installed()
         possible_vulnerabilities()
-    elif menu_input == "firewall-settings":
-        firewall_settings()
+    elif menu_input == "windows-defender":
+        windows_defender_status()
+    elif menu_input == "help":
+        print("The chrome-vunlerabilities function will tell you if chrome is running on your machine. It will also tell you what version you are running. If your version is out of date it will tell you what vulnerabilities you are susceptible to.")
+        print("The windows-defender function will tell you the various statistics of the anti-malware running on your device")
+        print("type 'chrome-vulnerabilites' or 'windows-defender' and hit enter")
+        menu_input = "str"
     else:
         print("please enter one of the menu options")
