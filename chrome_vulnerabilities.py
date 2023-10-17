@@ -45,8 +45,18 @@ def possible_vulnerabilities():
         f = open('112.csv', 'r')
         print(f.read())
         f.close()
+
+def firewall_settings():
+    print("test")
     
+menu_input = "str"
 
-is_chrome_installed()
-possible_vulnerabilities()
-
+while not menu_input in ("chrome-vulnerabilities", "firewall-settings"):
+    menu_input = input("Input the function you would like to run from the list \nchrome-vulnerabilities \nfirewall-settings \n")
+    if menu_input == "chrome-vulnerabilities":
+        is_chrome_installed()
+        possible_vulnerabilities()
+    elif menu_input == "firewall-settings":
+        firewall_settings()
+    else:
+        print("please enter one of the menu options")
