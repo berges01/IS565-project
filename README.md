@@ -3,7 +3,7 @@ This repo is a project for IS 565 Digital Forensics and Incident Response. Our c
 
 Group Members: Erik Berges, Jo Windley, Jake Hadley
 
-## Documentation V - 1.0
+## Documentation V - 1.0 (September)
 
 ### How it works
 - First the code checks if the file path where Google Chrome is installed exists
@@ -19,7 +19,7 @@ The provided image includes the results of the scan being run locally on a machi
 
 Further down in the results it provides a list of known vulnerabilities with that version of Chrome. It gives details about each of the vulnerabilities to help inform the user of the risks they are facing by continuing to run that version of Chrome.
 
-## Documentation Version 1.1 - New Features
+## Documentation Version 1.1 - New Features (October)
 
 ### How It Works
 
