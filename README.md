@@ -28,28 +28,26 @@ Further down in the results it provides a list of known vulnerabilities with tha
     - windows-defender
     - help
     
-- After giving an input to the menu the tool will...
+- After giving an input to the menu the tool will run the desired function.
 
-- This will give an output displaying ....
+- This will give an output that displays how to use the menu (help), your chrome vulnerabilities (chrome-vulnerabilities), or your antivirus status (windows-defender).
 
-- The new function will then display if your built-in antivrus is working and if has detected any malicious activity.
+- The windows-defender function has been implemented as of this version and it will display if your built-in antivirus is working and if has detected any malicious activity.
 
 ### Proof of Value
 
-The following images with their descriptions are the new features and updates in action using the security check Chrome extension.
+The following images with their descriptions are the new features and updates in action using the security check python script.
 
-Added a menu so users can choose the old chrome function, the new function, or ask for help.
 
+Here is the menu and an example of the new 'help' function:
 ![Menu](img/menu.png)
 
-Here is the menu when giving an input.
+Here is the menu and an example of the new windows-defender function:
 
 ![Input on Menu](img/menu-and-beginning-on-input.png)
 
-Here is the result with the output.
+and the rest of the output for the windows-defender function:
 
 ![Output](img/result-of-output.png)
 
-The new function will tell you if your built-in antivrus is working and if has detected any malicious activity.
-
-![Locally Ran Scan](img/scan-ran-locally-on-machine.png)
+The new function will tell you if your built-in antivrus is working and if has detected any malicious activity. The various parameters can give you more detail into the status of your windows-defender application that a window in the settings application may not tell you. This function can be used to detect any irregular behavior with your machine or its antivirus.
