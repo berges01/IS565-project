@@ -40,6 +40,7 @@ The following images with their descriptions are the new features and updates in
 
 
 Here is the menu and an example of the new 'help' function:
+
 ![Menu](img/menu.png)
 
 Here is the menu and an example of the new windows-defender function:
