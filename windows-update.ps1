@@ -5,7 +5,7 @@ $lastUpdate = (Get-WmiObject -Query "SELECT * FROM Win32_QuickFixEngineering" | 
 $timeSinceLastUpdate = (Get-Date) - $lastUpdate
 
 # Define a threshold for what you consider "up to date" (e.g., 7 days)
-$threshold = New-TimeSpan -Days 7
+$threshold = New-TimeSpan -Days 3
 
 # Check if the time since the last update is within the threshold
 if ($timeSinceLastUpdate -le $threshold) {
