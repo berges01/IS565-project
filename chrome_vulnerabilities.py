@@ -1,5 +1,5 @@
 import os
-import subprocess
+import subprocess, sys
 
 def is_chrome_installed():
     chrome_file_path = "C:\Program Files\Google\Chrome\Application"
@@ -70,19 +70,33 @@ def windows_defender_status():
         print(f"An error occurred: {str(e)}")
 
 
+def windows_update():
+    print("test")
+    p = subprocess.Popen(["powershell.exe", 
+              "C:\\Users\\\powershell_script.ps1"], 
+              stdout=sys.stdout)
+    p.communicate()
+
+
 # main menu and functions
 menu_input = "str"
 while not menu_input in ("chrome-vulnerabilities", "windows-defender", "help"):
-    menu_input = input("Input the function you would like to run from the list \n1) chrome-vulnerabilities \n2) windows-defender \n3) help \n")
+    menu_input = input("Input the function you would like to run from the list \n1) chrome-vulnerabilities \n2) windows-defender \n3) windows-update \n4) help \n")
     if menu_input == "chrome-vulnerabilities" or str(menu_input) == '1':
         is_chrome_installed()
         possible_vulnerabilities()
+
     elif menu_input == "windows-defender" or str(menu_input) == '2':
         windows_defender_status()
-    elif menu_input == "help" or str(menu_input) == '3':
+
+    elif menu_input == "windows-update" or str(menu_input) == '3':
+        windows_update()
+
+    elif menu_input == "help" or str(menu_input) == '4':
         print("The chrome-vunlerabilities function will tell you if chrome is running on your machine. It will also tell you what version you are running. If your version is out of date it will tell you what vulnerabilities you are susceptible to.")
         print("The windows-defender function will tell you the various statistics of the anti-malware running on your device")
         print("type 'chrome-vulnerabilites' or 'windows-defender' and hit enter")
         menu_input = "str"
+    
     else:
         print("please enter one of the menu options")
