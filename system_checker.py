@@ -104,7 +104,7 @@ while not menu_input in ("exit"):
         print("The chrome-vunlerabilities function will tell you if chrome is running on your machine. It will also tell you what version you are running. If your version is out of date it will tell you what vulnerabilities you are susceptible to.")
         print("The windows-defender function will tell you the various statistics of the anti-malware running on your device")
         print("type 'chrome-vulnerabilites' or 'windows-defender' or 'windows-update' or 'windows-firewall' and hit enter")
-        menu_input = ""
+        menu_input = "str"
 
     elif menu_input == "exit":
         print("exiting program")
