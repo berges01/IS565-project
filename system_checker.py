@@ -75,6 +75,7 @@ def windows_update():
               "C:\\Users\\windows-update.ps1"], 
               stdout=sys.stdout)
     p.communicate()
+    print("To update your Windows Operating System, open Settings and click Windows Update on the left")
 
 def windows_firewall():
     p = subprocess.Popen(["powershell.exe", 

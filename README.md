@@ -52,3 +52,18 @@ and the rest of the output for the windows-defender function:
 ![Output](img/result-of-output.png)
 
 The new function will tell you if your built-in antivrus is working and if has detected any malicious activity. The various parameters can give you more detail into the status of your windows-defender application that a window in the settings application may not tell you. This function can be used to detect any irregular behavior with your machine or its antivirus.
+
+
+## Documentation Version 1.2 - New Features (November)
+### How it works
+- A function has been implemented that will run a powershell script. The powershell script runs various checks to see if your windows operating system is up to date. (windows-update.ps1)
+
+- An additional function has been implemented that will run another powershell script. This powershell script gathers information on your windows firewall and prints the status to the console. (windows-firewall.ps1)
+
+### Proof of Value
+Here is a screenshot of the results returned from windows-update.ps1
+![Output](img/windows-update-ps.png)
+
+
+Here is a screenshot of the results returned from windows-firewall.ps1
+![Output](img/windows-firewall-ps.png)
