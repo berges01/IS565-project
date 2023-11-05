@@ -80,7 +80,7 @@ def windows_update():
 
 # main menu and functions
 menu_input = "str"
-while not menu_input in ("chrome-vulnerabilities", "windows-defender", "help"):
+while not menu_input in ("exit"):
     menu_input = input("Input the function you would like to run from the list \n1) chrome-vulnerabilities \n2) windows-defender \n3) windows-update \n4) help \n")
     if menu_input == "chrome-vulnerabilities" or str(menu_input) == '1':
         is_chrome_installed()
@@ -97,6 +97,9 @@ while not menu_input in ("chrome-vulnerabilities", "windows-defender", "help"):
         print("The windows-defender function will tell you the various statistics of the anti-malware running on your device")
         print("type 'chrome-vulnerabilites' or 'windows-defender' and hit enter")
         menu_input = "str"
-    
+
+    elif menu_input == "exit":
+        print("exiting program")
+
     else:
         print("please enter one of the menu options")
