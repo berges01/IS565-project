@@ -71,9 +71,14 @@ def windows_defender_status():
 
 
 def windows_update():
-    print("test")
     p = subprocess.Popen(["powershell.exe", 
-              "C:\\Users\\\powershell_script.ps1"], 
+              "C:\\Users\\windows-update.ps1"], 
+              stdout=sys.stdout)
+    p.communicate()
+
+def windows_firewall():
+    p = subprocess.Popen(["powershell.exe", 
+              "C:\\Users\\windows-firewall.ps1"], 
               stdout=sys.stdout)
     p.communicate()
 
@@ -81,7 +86,7 @@ def windows_update():
 # main menu and functions
 menu_input = "str"
 while not menu_input in ("exit"):
-    menu_input = input("Input the function you would like to run from the list \n1) chrome-vulnerabilities \n2) windows-defender \n3) windows-update \n4) help \n")
+    menu_input = input("Input the function you would like to run from the list \n1) chrome-vulnerabilities \n2) windows-defender \n3) windows-update \n4) windows-firewall \n5) help \n")
     if menu_input == "chrome-vulnerabilities" or str(menu_input) == '1':
         is_chrome_installed()
         possible_vulnerabilities()
@@ -92,11 +97,14 @@ while not menu_input in ("exit"):
     elif menu_input == "windows-update" or str(menu_input) == '3':
         windows_update()
 
-    elif menu_input == "help" or str(menu_input) == '4':
+    elif menu_input == "windows-firewall" or str(menu_input) == '4':
+        windows_firewall()
+
+    elif menu_input == "help" or str(menu_input) == '5':
         print("The chrome-vunlerabilities function will tell you if chrome is running on your machine. It will also tell you what version you are running. If your version is out of date it will tell you what vulnerabilities you are susceptible to.")
         print("The windows-defender function will tell you the various statistics of the anti-malware running on your device")
-        print("type 'chrome-vulnerabilites' or 'windows-defender' or 'windows-update' and hit enter")
-        menu_input = "str"
+        print("type 'chrome-vulnerabilites' or 'windows-defender' or 'windows-update' or 'windows-firewall' and hit enter")
+        menu_input = ""
 
     elif menu_input == "exit":
         print("exiting program")
