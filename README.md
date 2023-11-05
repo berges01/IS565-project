@@ -67,3 +67,5 @@ Here is a screenshot of the results returned from windows-update.ps1
 
 Here is a screenshot of the results returned from windows-firewall.ps1
 ![Output](img/windows-firewall-ps.png)
+
+These functions are valuable because
