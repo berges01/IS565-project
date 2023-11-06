@@ -68,4 +68,4 @@ Here is a screenshot of the results returned from windows-update.ps1
 Here is a screenshot of the results returned from windows-firewall.ps1
 ![Output](img/windows-firewall-ps.png)
 
-These functions are valuable because
+These functions are valuable because attackers can compromise your system if it is not up to date. Microsoft releases the vulnerabilites tied to the updates it provides making out of data machines vulnerable to attack. Your local machine's firewall is also essential in ensuring that malicious traffic is not targeting your machine. Unauthorized applications may also be sending data from your machine to an attacker, but a firewall can help prevent this.
